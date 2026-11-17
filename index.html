@@ -3,13 +3,14 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>INIADの紹介</title>
+    <meta name="theme-color" content="#075b9a">
+    <title>INIADの紹介｜東洋大学</title>
     <style>
       :root {
         color-scheme: light;
         font-family: "Noto Sans JP", "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
-        color: #172b3a;
-        background: #f2f6f7;
+        color: #17324d;
+        background: #f4f9ff;
       }
 
       * {
@@ -19,90 +20,170 @@
       body {
         min-height: 100vh;
         margin: 0;
-        padding: 64px 20px;
-        background: linear-gradient(145deg, #eaf5f3 0%, #f5f7fa 55%, #edf2f8 100%);
+        background: #f4f9ff;
       }
 
+      .topbar {
+        padding: 12px 24px;
+        color: #fff;
+        background: #064b83;
+        font-size: 0.9rem;
+        font-weight: 700;
+        letter-spacing: 0.06em;
+      }
+
+      .hero {
+        position: relative;
+        overflow: hidden;
+        padding: 54px 24px 58px;
+        color: #fff;
+        background: linear-gradient(120deg, #0879bd, #075392 68%, #073e75);
+      }
+
+      .hero::after {
+        position: absolute;
+        right: -70px;
+        bottom: -180px;
+        width: 430px;
+        height: 430px;
+        border: 46px solid rgb(255 255 255 / 10%);
+        border-radius: 50%;
+        content: "";
+        pointer-events: none;
+      }
+
+      .hero-inner,
       main {
-        width: min(100%, 760px);
+        width: min(100%, 960px);
         margin: 0 auto;
       }
 
-      header {
-        margin-bottom: 28px;
-        padding: 30px 34px;
-        border-radius: 18px;
-        color: #fff;
-        background: linear-gradient(120deg, #087e78, #175b83);
-        box-shadow: 0 12px 30px rgb(23 91 131 / 18%);
+      .eyebrow {
+        margin: 0 0 12px;
+        color: #bdeaff;
+        font-size: 0.85rem;
+        font-weight: 800;
+        letter-spacing: 0.18em;
       }
 
       h1 {
         margin: 0;
-        font-size: clamp(2rem, 6vw, 2.8rem);
-        letter-spacing: 0.06em;
+        font-size: clamp(2.2rem, 7vw, 3.8rem);
+        letter-spacing: 0.04em;
+        line-height: 1.2;
       }
 
-      .eyebrow {
-        margin: 0 0 8px;
-        color: #c8efea;
-        font-size: 0.82rem;
-        font-weight: 700;
-        letter-spacing: 0.16em;
+      .hero-caption {
+        margin: 16px 0 0;
+        color: #e2f5ff;
+        font-size: 1.05rem;
       }
 
-      section {
-        padding: 30px 34px 34px;
-        border: 1px solid #e1e9ed;
-        border-radius: 18px;
-        background: #fff;
-        box-shadow: 0 8px 24px rgb(26 55 74 / 7%);
+      main {
+        padding: 42px 24px 64px;
+      }
+
+      .section-heading {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        margin: 0 0 24px;
+      }
+
+      .section-heading::before {
+        width: 8px;
+        height: 36px;
+        border-radius: 8px;
+        background: #ffbd38;
+        content: "";
+        flex: 0 0 auto;
       }
 
       h2 {
-        margin: 0 0 22px;
-        padding-left: 14px;
-        border-left: 4px solid #0b8b83;
-        font-size: clamp(1.15rem, 4vw, 1.45rem);
-        line-height: 1.5;
+        margin: 0;
+        color: #104c7b;
+        font-size: clamp(1.25rem, 4vw, 1.75rem);
+        line-height: 1.45;
+      }
+
+      .section-note {
+        margin: -12px 0 22px 22px;
+        color: #5d7185;
+        font-size: 0.95rem;
       }
 
       ul {
         display: grid;
-        gap: 12px;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 16px;
         margin: 0;
         padding: 0;
         list-style: none;
       }
 
       li {
-        padding: 15px 18px;
-        border: 1px solid #e7eef0;
-        border-radius: 10px;
-        background: #f8fbfb;
-        line-height: 1.7;
-        transition: border-color 160ms ease, transform 160ms ease, background 160ms ease;
+        position: relative;
+        min-height: 88px;
+        padding: 19px 20px 19px 25px;
+        overflow-wrap: anywhere;
+        border: 1px solid #dceaf5;
+        border-radius: 14px;
+        background: #fff;
+        box-shadow: 0 5px 16px rgb(21 73 112 / 6%);
+        line-height: 1.75;
+        transition: transform 160ms ease, box-shadow 160ms ease, border-color 160ms ease;
+      }
+
+      li::before {
+        position: absolute;
+        top: 20px;
+        bottom: 20px;
+        left: 0;
+        width: 5px;
+        border-radius: 0 5px 5px 0;
+        background: #27a8cb;
+        content: "";
+      }
+
+      li:nth-child(3n + 2)::before {
+        background: #ffbd38;
+      }
+
+      li:nth-child(3n)::before {
+        background: #55b88a;
       }
 
       li:hover {
-        transform: translateX(3px);
-        border-color: #9bd5ce;
-        background: #f0faf8;
+        transform: translateY(-3px);
+        border-color: #9dcce8;
+        box-shadow: 0 10px 22px rgb(21 73 112 / 12%);
       }
 
-      @media (max-width: 520px) {
-        body {
-          padding: 32px 14px;
+      footer {
+        padding: 20px 24px;
+        color: #dceeff;
+        background: #073e70;
+        text-align: center;
+        font-size: 0.85rem;
+        letter-spacing: 0.04em;
+      }
+
+      @media (max-width: 640px) {
+        .hero {
+          padding: 42px 22px 46px;
         }
 
-        header,
-        section {
-          padding: 24px 20px;
-          border-radius: 14px;
+        main {
+          padding: 32px 18px 48px;
+        }
+
+        ul {
+          grid-template-columns: 1fr;
+          gap: 12px;
         }
 
         li {
-          padding: 13px 14px;
+          min-height: auto;
         }
       }
 
@@ -117,13 +198,20 @@
     </style>
   </head>
   <body>
-    <main>
-      <header>
+    <div class="topbar">東洋大学｜情報連携学部 INIAD</div>
+    <header class="hero">
+      <div class="hero-inner">
         <p class="eyebrow">TOYO UNIVERSITY · INIAD</p>
         <h1>INIADの紹介</h1>
-      </header>
-      <section>
-        <h2>総合情報学科メディア専攻の教科</h2>
+        <p class="hero-caption">学びの時間割から、メディアの世界をのぞいてみよう。</p>
+      </div>
+    </header>
+    <main>
+      <section aria-labelledby="courses-title">
+        <div class="section-heading">
+          <h2 id="courses-title">総合情報学科メディア専攻の教科</h2>
+        </div>
+        <p class="section-note">メディアについて学ぶ授業を曜日ごとに紹介します。</p>
         <ul>
           <li>月曜2限　マルチメディアシミュレーション　メディアのためのAI基礎</li>
           <li>月曜4限</li>
@@ -135,5 +223,6 @@
         </ul>
       </section>
     </main>
+    <footer>TOYO UNIVERSITY · INIAD</footer>
   </body>
 </html>
